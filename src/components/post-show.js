@@ -1,10 +1,11 @@
 import "./post-show.css";
 import React from "react";
-import Comments from "./comments";
+import { CommentList } from "./comment-list";
 
 export const PostShow = (post) => {
   const { content, imageUrl, comments } = post;
-  // console.log("COMMENTS: ", comments);
+  // console.log("POST: ", post);
+  //console.log("STATE: ", counter);
 
   return (
     <div className="card post">
@@ -14,8 +15,9 @@ export const PostShow = (post) => {
       <div className="card-content">
         <p>{content}</p>
       </div>
-      <div className="card-action"></div>
-      <Comments comments={comments} />
+      <div className="card-action">
+        <CommentList comments={comments} />
+      </div>
     </div>
   );
 };
